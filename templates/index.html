@@ -4,6 +4,9 @@
   <meta name="Description" content="MST-Bank">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2249/2249539.png" type="image/icon type">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <title>Attendance Checker</title>  
   <style>
     a.button4{
@@ -33,19 +36,18 @@
   </style>
   <style>
     body {
-      background-image: url('/static/math.jpg');
-      background-position: right;
+      background-image: url('/static/galaxy.jpg') ;
+      background-position: center;
       background-size: cover;
       }
    </style>
   <style>
     #footer {
-    position: fixed;
-    padding: 10px 10px 0px 10px;
+    text-align: center;
+    padding: 10px 0px 0px 10px;
     bottom: 0;
     width: 100%;
-    /* Height of the footer*/
-    height: 100px;
+    height: 65px;
     background: transparent;
     }
   </style>
@@ -55,7 +57,7 @@
       width: fit-content;
       border: 5px solid grey;
       border-radius: 20px;
-      padding: 50px;
+      padding: 25px;
       background-color: transparent;
     } 
     </style>
@@ -71,37 +73,41 @@
 <body>
   <header>  
     <div style="text-align:center">
-    <img src="/static/logo.jpeg" width="180" height="180"><br>
+    <img src="/static/logo.jpeg" width="180" height="180" style="border-radius: 50%;" ><br>
     <h1 style="color: black">Welcome to MST-Services</h1>
-    <p style="color: yellow" ><font size="+2"></strong><mark>Attendance Checker</mark><strong></font></p>
+    <p style="color: yellow" ><font size="+2"><strong><mark>Attendance Checker</mark></strong></font></p>
       
     <div class="center">
-    <form action="" action="#" method="get">  
+    <form  method="get">
+    
+    <p style="color: black; font-weight: 900;"><strong>Note:</strong> None of your data is being stored or used anywhere. This website is free and <a href="https://github.com/dhimanparas20/Attendance-Predictor" target="_blank"><b>opensource</b></a>.</p><br>  
 
-    <label id="icon" for="curr_lec"><i class="far fa-check-circle" style="font-size:15px">Number of Lectures Attended</i></label>
-    <input type="number" maxlength="100" minlength="0" name="curr_lec" id="name" placeholder="BY YOU" required/>  
-    <br><br>
-
-    <label id="icon" for="tot_lec"><i class="far fa-check-circle" style="font-size:15px">Number of Lectures Delivered</i></label>
-    <input type="number" maxlength="100" minlength="0" name="tot_lec" id="name" placeholder="BY TEACHER" required/>
+    <label id="icon" for="name"></label><i class="fas fa-user" aria-hidden="true"></i></label>
+    <input type="text" style="height: 3.5%; width: 80%;" size="30%" background-color: whitesmoke;" maxlength="20" minlength="1" name="name" id="name" placeholder="Your Name" required/>  
+    <br><br>  
+    
+    <label id="icon" for="curr_lec"><i class="fas fa-graduation-cap" style="font-size:15px"></i></label>
+    <input type="number" style="height: 3.5%; width: 80%;" min="1" max="200"  name="curr_lec" id="curr_lec" placeholder="Number of Lectures Attended BY YOU" required/>  
     <br><br>
     
-    <input type="submit" value="Calculate">
-    <br> <br> <hr> 
+    <label id="icon" for="tot_lec"><i class="fas fa-pencil-square-o " style="font-size:15px"></i></label>
+    <input type="number" style="height: 3.5%; width: 80%;" min="1" max="200" name="tot_lec" id="tot_lec" placeholder="Number of Lectures Delivered BY TEACHER" required/>
+    <br><br>
+
+    <input  type="submit" value="Calculate" style="border-radius: 25px; height: 5%; width: 30%; color: yellow; background-color:black; border-color: aqua;" >
+    <br> <br> 
+    <hr>  
     <div id="output" ></div>
-    <p class="output-statement" >Your current ATTENDANCE is: <spin style="color: red">{{per}}% </spin></p>
-        <p class="output-statement" >To get a minimum of 75% ATTENDANCE you need to attend atleast {{val1}} out of {{val2}} lectures  now onwards.</p>
-        <p class="output-statement" >In Simple words: You need to attend <spin style="color: red">{{temp}}</spin> more lectures.</p>
-    <hr>    
+    <p class="output-statement"><strong>Dear <mark><b>{{name}}</b></mark> : Your current ATTENDANCE is: <spin style="color: red">{{per}}% </spin></strong></p>
+        <p class="output-statement" ><strong>To get a minimum of 75% ATTENDANCE you need to attend atleast {{val1}} out of {{val2}} lectures  now onwards.</strong></p>
+        <p class="output-statement"><mark><strong>In Simple words: You need to attend <spin style="color: red">{{temp}}</spin> more lectures.</strong></mark></p>
+    <hr>
     </div>
     </form>
     </div> 
-    <div id="footer">
-      <p style="color: black">A Site by MST-Production House</p>
-      &lt;&lt;&lt; ©<a href="https://github.com/dhimanparas20" target="_blank">Paras Dhiman</a> &gt;&gt;&gt;
-    </div>
-  </div>
-  </div>
-  </header>    
-
-</body></html>
+  </header>
+  <div id="footer">
+  &lt;&lt;&lt; ©<a href="https://github.com/dhimanparas20" target="_blank"> Paras Dhiman & Messi</a> &gt;&gt;&gt;
+  </div>    
+</body>
+</html>
